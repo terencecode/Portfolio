@@ -83,11 +83,18 @@ module.exports = {
             // them inside the js.
             loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]---[local]---[hash:base64:5]!sass')
         }, {
+            test: /\.css$/,
+            // we extract the styles into their own .css file instead of having
+            // them inside the js.
+            loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]---[local]---[hash:base64:5]')
+        }, {
             test: /\.woff(2)?(\?[a-z0-9#=&.]+)?$/,
             loader: 'url?limit=10000&mimetype=application/font-woff'
         }, {
             test: /\.(ttf|eot|svg)(\?[a-z0-9#=&.]+)?$/,
             loader: 'file'
+        }, {
+            test: /\.jpg$/, loader: "url?limit=10000000&mimetype=image/jpeg"
         }]
     },
     postcss: [

@@ -3,32 +3,34 @@
  */
 
 import React from 'react';
-import {Panel, Image, Grid, Row, Col} from 'react-bootstrap';
+import {Image, Row, Col, Panel} from 'react-bootstrap';
+import styles from '../../styles/article.css';
 
 class Article extends React.Component {
+
+    static propTypes = {
+        title: React.PropTypes.string,
+        img: React.PropTypes.string,
+        bodyText: React.PropTypes.string
+    };
+
     render() {
         return (
-
-                <Panel header={this.props.title}>
-                    <Grid>
+                <div className={styles.article}>
                         <Row className="show-grid">
-                            <Col md={4} sm={6} xs={12}>
-                                <Image responsive src={this.props.img} rounded/>
+                            <Col lg={12}>
+                                <Image responsive src={this.props.img} className={styles.articleImage}/>
                             </Col>
-                            <Col md={8} sm={6} xs={12}>
-                                {this.props.bodyText}
+                            <Col lg={12} className={styles.articlePanel}>
+                                <Panel>
+                                    <h5 className={styles.title}>{this.props.title}</h5>
+                                    {this.props.bodyText}
+                                </Panel>
                             </Col>
                         </Row>
-                    </Grid>
-                </Panel>
+                </div>
         );
     }
 }
-
-Article.propTypes = {
-    title: React.PropTypes.string,
-    img: React.PropTypes.string,
-    bodyText: React.PropTypes.string
-};
 
 export default Article;

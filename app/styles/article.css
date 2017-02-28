@@ -1,0 +1,14 @@
+:local .articlePanel {
+}
+
+:local .articleImage {
+
+}
+
+:local .article {
+    margin-bottom: 20px;
+}
+
+:local .title {
+    margin-top: 0;
+}

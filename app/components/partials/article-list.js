@@ -3,19 +3,19 @@
  */
 
 import React from 'react';
-import {Col, Row} from 'react-bootstrap';
 
 import Article from './article';
 
 class ArticleList extends React.Component {
+
+    static propTypes = {
+        articles: React.PropTypes.array,
+        type: React.PropTypes.string
+    };
+
     createArticleList() {
         return this.props.articles.filter((article) => this.props.type === article.type).map((article, index) =>
-                    <Row key={index} className="show-grid">
-                        <Col>
-                            <Article key={index} img={article.img} bodyText={article.bodyText} title={article.title} />
-                        </Col>
-                    </Row>
-        );
+            <Article key={index} img={article.img} bodyText={article.bodyText} title={article.title} />);
     }
     render() {
         return (
@@ -25,10 +25,5 @@ class ArticleList extends React.Component {
         );
     }
 }
-
-ArticleList.propTypes = {
-    articles: React.PropTypes.string,
-    type: React.PropTypes.string
-};
 
 export default ArticleList;
