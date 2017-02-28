@@ -6,8 +6,7 @@ import {LinkContainer} from 'react-router-bootstrap';
 class Navigation extends React.Component {
 
     static propTypes = {
-        navItems: React.PropTypes.array,
-        children: React.PropTypes.element
+        navItems: React.PropTypes.array
     };
 
     createNavItems() {
@@ -38,7 +37,6 @@ class Navigation extends React.Component {
                         </Navbar.Text>
                     </Navbar.Collapse>
                 </Navbar>
-                {this.props.children}
             </div>
         );
     }

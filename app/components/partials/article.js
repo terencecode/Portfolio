@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import {Image, Row, Col, Panel} from 'react-bootstrap';
+import {Image, Row, Col, Well} from 'react-bootstrap';
 import styles from '../../styles/article.css';
 
 class Article extends React.Component {
@@ -22,10 +22,10 @@ class Article extends React.Component {
                                 <Image responsive src={this.props.img} className={styles.articleImage}/>
                             </Col>
                             <Col lg={12} className={styles.articlePanel}>
-                                <Panel>
-                                    <h5 className={styles.title}>{this.props.title}</h5>
+                                <Well>
+                                    <h4 className={styles.title}>{this.props.title}</h4>
                                     {this.props.bodyText}
-                                </Panel>
+                                </Well>
                             </Col>
                         </Row>
                 </div>

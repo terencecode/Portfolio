@@ -1,3 +1,10 @@
 :local .badge {
-    position: absolute;
+    position: fixed;
+    top: 205px;
+    /*display: none;*/
+}
+
+:local .title {
+    text-align: center;
+    vertical-align: middle;
 }
