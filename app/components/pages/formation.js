@@ -11,7 +11,7 @@ import ArticleList from '../../containers/article-list';
 class Formation extends React.Component {
     render() {
         return (
-                <Col md={7} mdOffset={3} xs={10} xsOffset={1}>
+                <Col md={7} mdOffset={3} sm={10} smOffset={1}>
                     <PageHeader>Formation</PageHeader>
                     <ArticleList type="formation"/>
                 </Col>

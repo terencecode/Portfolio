@@ -1,10 +1,53 @@
-:local .badge {
-    position: fixed;
+:local .badgeContainer {
+    position: fixed !important;
     top: 205px;
+    text-align: justify;
     /*display: none;*/
+}
+
+:local .badge {
+    visibility: hidden;
 }
 
 :local .title {
     text-align: center;
     vertical-align: middle;
+}
+
+@keyframes jumps {
+    0% {top: 620px;}
+    35% {top:570px;}
+    70% {top: 620px;}
+    85% {top: 600px;}
+    80% {top: 620px;}
+    85% {top: 600px;}
+    90% {top: 620px;}
+    95% {top: 600px;}
+    100% {top: 620px;}
+}
+
+:local .circleBut {
+    position: absolute !important;
+    border-radius: 50% !important;
+    height: 50px;
+    width: 50px;
+    left: 50%;
+    top: 620px;
+    margin-top: -25px;
+    margin-left: -25px;
+    background-color: #2196F3 !important;
+    animation-name: jumps;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite !important;
+    /*-moz-animation: jumps 1s linear 0s infinite;
+    -o-animation: jumps 1s linear 0s infinite;*/
+}
+
+:local .circleBut:hover {
+    background-color: #00BCD4 !important;
+}
+
+:local .icon {
+    margin:0;
 }
