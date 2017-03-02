@@ -7,16 +7,23 @@ import styles from '../../styles/info-badge.css';
 import {Row, Col, Panel, Button, Image} from 'react-bootstrap';
 
 class InfoBadge extends React.Component {
-
+    changeVisibility() {
+        document.getElementsByClassName('myBadge')[0].style.visibility === 'hidden' ?
+            document.getElementsByClassName('myBadge')[0].style.visibility  = 'visible' :
+            document.getElementsByClassName('myBadge')[0].style.visibility  = 'hidden';
+    }
     render() {
+        let styling = {
+            visibility: 'hidden'
+        };
         return (
                 <Col md={3} smHidden xsHidden className={styles.badgeContainer}>
                         <Row>
                             <Col md={10} mdOffset={1}>
-                                <Button bsStyle="primary" className={styles.circleBut}>
+                                <Button href="#" bsStyle="primary" className="circleButton" onClick={() => {this.changeVisibility();}}>
                                     <Image src={require('../../img/ic_person_white_48dp_2x.png')} responsive className={styles.icon} circle />
                                 </Button>
-                                <div className={styles.badge}>
+                                <div className="myBadge" style={styling}>
                                     <Image src={require('../../img/profile-pic.jpg')} responsive/>
                                     <Panel>
                                         <h5 className={styles.title}>Biographie:</h5>
